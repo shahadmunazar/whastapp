@@ -1,0 +1,80 @@
+.bg-light-success {
+  background-color: rgba(21, 183, 107, 0.1) !important;
+}
+
+.bg-light-warning {
+  background-color: rgba(255, 159, 67, 0.1) !important;
+}
+
+.bg-light-info {
+  background-color: rgba(0, 207, 221, 0.1) !important;
+}
+
+.bg-light-danger {
+  background-color: rgba(234, 84, 85, 0.1) !important;
+}
+
+.bg-light-primary {
+  background-color: rgba(21, 183, 107, 0.1) !important;
+}
+
+.text-success {
+  color: #15b76b !important;
+}
+
+.text-warning {
+  color: #ff9f43 !important;
+}
+
+.text-info {
+  color: #00cfdd !important;
+}
+
+.text-danger {
+  color: #ea5455 !important;
+}
+
+.text-primary {
+  color: #15b76b !important;
+}
+
+.bg-primary {
+  background-color: #15b76b !important;
+}
+
+.btn-primary {
+  background-color: #15b76b !important;
+  border-color: #15b76b !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #129d5b !important;
+  border-color: #129d5b !important;
+}
+
+.btn-outline-primary {
+  color: #15b76b !important;
+  border-color: #15b76b !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #15b76b !important;
+  color: white !important;
+}
+
+.border-primary {
+  border-color: #15b76b !important;
+}
+
+.rounded-4 {
+  border-radius: 1rem !important;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px);
+}
+.transition-all {
+  transition: all 0.3s ease;
+}
