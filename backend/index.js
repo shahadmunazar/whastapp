@@ -26,6 +26,11 @@ app.use('/api/campaigns', campaignRoutes);
 app.use('/api/logs', apiLogRoutes);
 app.use('/api/sales', salesRoutes);
 
+// Health Check API
+app.get('/api/health', (req, res) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date() });
+});
+
 // Start Server
 const startServer = async () => {
     try {
