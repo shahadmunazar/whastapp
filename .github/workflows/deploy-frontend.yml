@@ -32,5 +32,5 @@ jobs:
             # If you serve your frontend using pm2, uncomment the line below:
             # pm2 restart frontend
             
-            # If you serve using nginx or apache, you might need to copy the build files to the web root:
-            # sudo cp -r dist/* /var/www/html/
+            # If you serve using nginx or apache, copy the build files to the web root:
+            sudo cp -r dist/* /var/www/html/
