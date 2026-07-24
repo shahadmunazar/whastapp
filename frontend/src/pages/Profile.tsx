@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { User, Mail, Shield, Phone, MapPin, Globe, Camera, Save, Lock, Edit2 } from 'lucide-react';
 
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const Profile = () => {
   const [profileImage, setProfileImage] = useState<string | null>(null);

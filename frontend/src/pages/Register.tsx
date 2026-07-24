@@ -13,7 +13,7 @@ const Register: React.FC = () => {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/auth/register', { name, email, password, role });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, { name, email, password, role });
       alert('Registration successful! Please login.');
       navigate('/login');
     } catch (err) {

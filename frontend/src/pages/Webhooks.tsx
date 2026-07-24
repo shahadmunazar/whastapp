@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Webhook, ShieldCheck, Link2, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const Webhooks = () => {
   const [projects, setProjects] = useState<any[]>([]);

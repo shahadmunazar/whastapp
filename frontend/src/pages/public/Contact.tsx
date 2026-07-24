@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Mail, MapPin, Phone } from 'lucide-react';
 
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { MessageSquare, Search, Eye, Filter } from 'lucide-react';
 
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const Messages: React.FC = () => {
   const [messages, setMessages] = useState<any[]>([]);

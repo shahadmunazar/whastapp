@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Code, Clipboard, ShieldCheck, Link2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const DeveloperApi = () => {
   const [projects, setProjects] = useState<any[]>([]);
@@ -37,7 +37,7 @@ const DeveloperApi = () => {
   };
 
   const apiSnippets = {
-    curl: `curl -X POST "http://localhost:3000/api/projects/${activeProjectId || '{PROJECT_ID}'}/send" \\
+    curl: `curl -X POST '${import.meta.env.VITE_API_URL}/api/projects/${activeProjectId || '{PROJECT_ID}'}/send' \\
 -H "Content-Type: application/json" \\
 -H "X-Project-Token: ${activeProject?.apiToken || '{YOUR_API_TOKEN}'}" \\
 -d '{
@@ -50,7 +50,7 @@ const DeveloperApi = () => {
 
 const sendMessage = async () => {
   try {
-    const res = await axios.post('http://localhost:3000/api/projects/${activeProjectId || '{PROJECT_ID}'}/send', {
+    const res = await axios.post('${import.meta.env.VITE_API_URL}/api/projects/${activeProjectId || '{PROJECT_ID}'}/send', {
       number: 'RECIPIENT_NUMBER',
       message: 'Hello from Node.js',
       appId: '${activeProject?.appId || '{YOUR_APP_ID}'}',
@@ -66,7 +66,7 @@ const sendMessage = async () => {
     python: `import requests
 import json
 
-url = "http://localhost:3000/api/projects/${activeProjectId || '{PROJECT_ID}'}/send"
+url = '${import.meta.env.VITE_API_URL}/api/projects/${activeProjectId || '{PROJECT_ID}'}/send'
 headers = {
     "Content-Type": "application/json",
     "X-Project-Token": "${activeProject?.apiToken || '{YOUR_API_TOKEN}'}"
@@ -91,7 +91,7 @@ public class WhatsAppSender {
         
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("http://localhost:3000/api/projects/${activeProjectId || '{PROJECT_ID}'}/send"))
+            .uri(URI.create("${import.meta.env.VITE_API_URL}/api/projects/${activeProjectId || '{PROJECT_ID}'}/send"))
             .header("Content-Type", "application/json")
             .header("X-Project-Token", "${activeProject?.apiToken || '{YOUR_API_TOKEN}'}")
             .POST(HttpRequest.BodyPublishers.ofString(json))
@@ -105,7 +105,7 @@ public class WhatsAppSender {
 
 $response = Http::withHeaders([
     'X-Project-Token' => '${activeProject?.apiToken || '{YOUR_API_TOKEN}'}',
-])->post('http://localhost:3000/api/projects/${activeProjectId || '{PROJECT_ID}'}/send', [
+])->post('${import.meta.env.VITE_API_URL}/api/projects/${activeProjectId || '{PROJECT_ID}'}/send', [
     'number' => 'RECIPIENT_NUMBER',
     'message' => 'Hello from Laravel',
     'appId' => '${activeProject?.appId || '{YOUR_APP_ID}'}',
@@ -116,7 +116,7 @@ return $response->json();`,
     php: `<?php
 $curl = curl_init();
 curl_setopt_array($curl, [
-  CURLOPT_URL => "http://localhost:3000/api/projects/${activeProjectId || '{PROJECT_ID}'}/send",
+  CURLOPT_URL => "${import.meta.env.VITE_API_URL}/api/projects/${activeProjectId || '{PROJECT_ID}'}/send",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -140,7 +140,7 @@ curl_close($curl);
 if ($err) echo "cURL Error #:" . $err;
 else echo $response;
 ?>`,
-    js: `fetch("http://localhost:3000/api/projects/${activeProjectId || '{PROJECT_ID}'}/send", {
+    js: `fetch('${import.meta.env.VITE_API_URL}/api/projects/${activeProjectId || '{PROJECT_ID}'}/send', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

@@ -38,11 +38,11 @@ const Home = () => {
 
   useEffect(() => {
     // Track visit
-    axios.post('http://localhost:3000/api/stats/visit').catch(() => {});
+    axios.post(`${import.meta.env.VITE_API_URL}/api/stats/visit`).catch(() => {});
 
     const fetchStats = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/projects/stats', {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/projects/stats`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setStats(res.data);

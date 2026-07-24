@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Check, Zap, Crown, Rocket, AlertCircle, Loader2, Calendar, ShieldCheck, Clock } from 'lucide-react';
 import SubscriptionModal from '../components/SubscriptionModal';
 
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const PricingCard = ({ title, price, icon: Icon, features, color, recommended = false, billingCycle, isCurrent, usage, limit, planStatus, onUpgrade }: any) => (
   <div className={`card border-0 shadow-lg h-100 overflow-hidden transition-all ${recommended ? 'transform-scale-105 z-1 border-primary border-2' : ''} ${isCurrent ? (planStatus === 'active' ? 'border-success border-2 shadow-success-subtle' : 'border-danger border-2 shadow-danger-subtle') : ''}`}>

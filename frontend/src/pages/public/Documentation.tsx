@@ -128,7 +128,7 @@ const Documentation = () => {
                 
                 <div className="bg-dark text-white-50 p-4 rounded-3 mb-4 overflow-hidden">
                   <pre className="mb-0 font-monospace small" style={{ color: '#a8c7fa' }}>
-{`POST http://localhost:3000/api/projects/:projectId/send
+{`POST http://16.192.149.143:3000/api/projects/:projectId/send
 
 {
   "phoneNumber": "919876543210",

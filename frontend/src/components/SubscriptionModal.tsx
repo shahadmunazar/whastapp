@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { CreditCard, ShieldCheck, Zap, Rocket, Crown, Loader2 } from 'lucide-react';
 
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 interface SubscriptionModalProps {
   show: boolean;

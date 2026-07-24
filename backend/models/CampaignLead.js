@@ -14,6 +14,10 @@ const CampaignLead = sequelize.define('CampaignLead', {
         type: DataTypes.STRING,
         allowNull: true
     },
+    message: {
+        type: DataTypes.TEXT,
+        allowNull: true
+    },
     status: {
         type: DataTypes.STRING,
         allowNull: false,

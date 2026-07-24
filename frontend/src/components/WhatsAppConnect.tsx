@@ -6,7 +6,7 @@ import 'react-phone-input-2/lib/style.css';
 import { useLocation } from 'react-router-dom';
 
 const PhoneInput = (PhoneInputImport as any).default || PhoneInputImport;
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 const WhatsAppConnect: React.FC = () => {
   const location = useLocation();
   const [projects, setProjects] = useState<any[]>([]);

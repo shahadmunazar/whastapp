@@ -3,7 +3,7 @@ import axios from 'axios';
 import { CircularProgress, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 import { Activity, Clock, Code, Filter, TerminalSquare } from 'lucide-react';
 
-const BACKEND_URL = 'http://localhost:3000/api';
+const BACKEND_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 export default function ApiLogs() {
   const [logs, setLogs] = useState<any[]>([]);
