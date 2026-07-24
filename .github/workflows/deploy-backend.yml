@@ -29,4 +29,4 @@ jobs:
             git pull origin main
             npm install
             npm run migrate
-            pm2 restart all
+            pm2 restart whatsapp-backend
