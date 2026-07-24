@@ -21,9 +21,8 @@ const LandingHome = () => {
                 #1 WhatsApp Marketing Platform
               </div>
               <h1 className="display-4 fw-bolder mb-4 text-dark" style={{ letterSpacing: '-1.5px', lineHeight: '1.1' }}>
-                WhatsApp Marketing <br className="d-none d-lg-block" />
-                Made <span className="text-success">Simple, Powerful</span> <br className="d-none d-lg-block" />
-                & Results Driven
+                Connect with <br className="d-none d-lg-block" />
+                Customers on <span className="text-success">WhatsApp</span>
               </h1>
               <p className="lead text-muted mb-5 pe-lg-5" style={{ fontSize: '1.1rem' }}>
                 Send bulk messages, run smart campaigns, automate customer chats with chatbot & grow your business.
