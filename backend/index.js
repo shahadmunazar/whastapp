@@ -28,7 +28,7 @@ app.use('/api/sales', salesRoutes);
 
 // Health Check API
 app.get('/api/health', (req, res) => {
-    res.status(200).json({ status: 'ok', timestamp: new Date() });
+    res.status(200).json({ status: 'ok', message: 'API is running properly!', timestamp: new Date() });
 });
 
 // Start Server
