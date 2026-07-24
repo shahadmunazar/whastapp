@@ -5,13 +5,13 @@ on:
     branches:
       - main
     paths:
-      - 'backend/**'
+      - 'backend/**' # Only trigger if files in the backend folder changed
       - '.github/workflows/deploy-backend.yml'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,12 +22,11 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          # IMPORTANT: Update the target directory `~/whastapp` if your project is located elsewhere on the server.
+          # Update the restart command `pm2 restart backend` if you use a different pm2 name or systemd.
           script: |
-            cd /path/to/your/app/backend
+            cd ~/whastapp/backend
             git pull origin main
             npm install
-            
-            # Uncomment the next line if you have database migrations
-            # npx sequelize-cli db:migrate
-            
+            npm run migrate
             pm2 restart all
