@@ -13,7 +13,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-
       appId: {
         type: Sequelize.STRING,
         allowNull: true
